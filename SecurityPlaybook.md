@@ -64,4 +64,21 @@ For response templates, see `IncidentResponseTemplates.md`
 - [Cloudflare DNS](https://1.1.1.1/) – Privacy-focused DNS for safer browsing
 - [Google Workspace Security Guide](https://support.google.com/a/answer/7587183?hl=en) – For orgs using Google Workspace
 
+---
+
+## 🛠️ How to Customize This Playbook for Your Business
+
+This playbook provides a general foundation, but you should customize it based on your industry, tools, and threat model. Here are suggestions:
+
+| Industry | What to Add |
+|----------|-------------|
+| **Healthcare** | HIPAA compliance requirements, medical device security, secure patient portals |
+| **Retail** | POS (point of sale) system hardening, card payment compliance (PCI-DSS) |
+| **Nonprofits** | Secure donor databases, volunteer device policy, low-cost/free security tools |
+| **Remote Teams** | VPN requirements, secure cloud file storage, endpoint protection on home devices |
+| **Education** | Device control for students/staff, web filtering, Google Workspace for Education security settings |
+
+🎯 *Use the checklist and templates as a base, and add steps specific to your environment.*
+
+
 
