@@ -80,5 +80,59 @@ This playbook provides a general foundation, but you should customize it based o
 
 🎯 *Use the checklist and templates as a base, and add steps specific to your environment.*
 
+## 🖼️ Security Layers Diagram
+
+Below is a simplified security model for small businesses:
+
+       +-----------------------------+
+       |     Staff Security Training |
+       +-----------------------------+
+                    ▲
+                    |
+       +-----------------------------+
+       | Multi-Factor Authentication |
+       +-----------------------------+
+                    ▲
+                    |
+       +-----------------------------+
+       | Strong Password Management  |
+       +-----------------------------+
+                    ▲
+                    |
+       +-----------------------------+
+       |     Device Antivirus/EDR    |
+       +-----------------------------+
+                    ▲
+                    |
+       +-----------------------------+
+       |    Secured Router/Firewall  |
+       +-----------------------------+
+                    ▲
+                    |
+       +-----------------------------+
+       |    Internet / Cloud Apps    |
+       +-----------------------------+
+
+
+✅ **Pro Tip:** Put a blank line above and below the diagram so it displays cleanly.
+
+---
+
+### 📍 Step 3: Save Changes
+
+- Scroll to the bottom of the page
+- Add a commit message like `Add security layers diagram`
+- Click the green **“Commit changes”** button
+
+---
+
+✅ Done! You now have a basic **visual model** inside your playbook that works great in Markdown and looks clean in GitHub.
+
+Let me know if you'd like to:
+- Add a visual image version later (PNG or SVG)
+- Move this diagram into its own `.md` file (optional)
+- Generate a matching diagram image once you're logged in
+
+Ready to help with next steps!
 
 
