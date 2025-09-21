@@ -53,3 +53,15 @@ Small businesses are increasingly targeted by cybercriminals, yet most lack full
 For a step-by-step checklist, see `SecurityChecklist.md`  
 For response templates, see `IncidentResponseTemplates.md`
 
+---
+
+## 🔗 Additional Resources
+
+- [CISA Small Business Cybersecurity Corner](https://www.cisa.gov/resources-tools/services/small-business-cybersecurity-corner) – U.S. government hub for SMBs
+- [NIST Cybersecurity Framework](https://www.nist.gov/cyberframework) – Official framework for managing cyber risk
+- [HaveIBeenPwned](https://haveibeenpwned.com/) – Check if your emails have been breached
+- [1Password](https://1password.com/) / [Bitwarden](https://bitwarden.com/) – Trusted password managers
+- [Cloudflare DNS](https://1.1.1.1/) – Privacy-focused DNS for safer browsing
+- [Google Workspace Security Guide](https://support.google.com/a/answer/7587183?hl=en) – For orgs using Google Workspace
+
+
