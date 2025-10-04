@@ -1,4 +1,4 @@
-# ✅ Small Business Security Checklist
+#  Small Business Security Checklist
 
 Use this checklist monthly to track your cybersecurity posture.
 
