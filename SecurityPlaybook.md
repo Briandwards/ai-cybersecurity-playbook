@@ -1,138 +1,80 @@
-# 🛡️ Cybersecurity Playbook for Small Businesses
+# 🛡️ Small Business Cybersecurity Playbook
 
-## 📘 Introduction
-Small businesses are increasingly targeted by cybercriminals, yet most lack full-time security staff. This playbook provides clear, practical guidance to help small businesses secure their digital assets using industry best practices and AI-assisted insights.
-
----
-
-## 🔍 Common Threats
-- **Phishing Attacks**
-- **Ransomware**
-- **Weak Passwords**
-- **Unpatched Software**
-- **Insider Threats**
+## Overview
+This playbook provides a simple, step-by-step cybersecurity framework tailored for small businesses and nonprofits. It’s designed to be clear, actionable, and affordable — no dedicated IT team required.
 
 ---
 
-## 🔐 Best Practices
+## 1. Core Security Principles
 
-### 🔑 Password Security
-- Enforce strong passwords (12+ characters, mix of types)
-- Use a password manager (e.g., Bitwarden, 1Password)
-- Change default passwords on all devices
+### 1.1 Least Privilege
+Users should only have the access they need to perform their duties.  
+- Remove admin rights from daily accounts.  
+- Create separate admin accounts for configuration tasks.
 
-### 🔒 Multi-Factor Authentication (MFA)
-> AI-GENERATED EXPLANATION:
-> “MFA adds an extra layer of protection by requiring a second form of identity verification. Even if a hacker gets your password, they can’t access your account without the second factor — such as a code sent to your phone.”
+### 1.2 Patch Management
+Unpatched software is one of the top causes of breaches.  
+- Enable automatic updates for Windows, browsers, and key apps.  
+- Schedule weekly update checks.
 
-### 🔄 Software Updates
-- Turn on automatic updates for OS and software
-- Regularly update antivirus and firewall tools
+### 1.3 Backup & Recovery
+Regular backups prevent ransomware losses.  
+- Use **3-2-1 rule**: 3 copies, 2 media types, 1 offsite.  
+- Test restores monthly.
 
-### 🌐 Network Security
-- Use a business-grade router/firewall
-- Disable unused ports and remote access protocols
-- Separate guest and internal networks
+### 1.4 Secure Configuration
+Disable unnecessary services and default passwords.  
+- Rename the default “Administrator” account.  
+- Disable Guest accounts.  
+- Enforce password length and complexity policies.
 
----
-
-## 🧑‍🏫 Cyber Hygiene for Employees
-- Train staff on how to identify phishing
-- Require MFA for all business apps
-- Schedule quarterly refresher sessions
-
----
-
-## 💾 Data Backup Strategy
-- Use automated daily cloud backups
-- Test restore procedures monthly
+### 1.5 User Awareness
+Train employees to recognize phishing and social engineering.  
+- Conduct quarterly training.  
+- Send simulated phishing tests to improve awareness.
 
 ---
 
-## 🧭 Next Steps
-For a step-by-step checklist, see `SecurityChecklist.md`  
-For response templates, see `IncidentResponseTemplates.md`
+## 2. Threat Areas
+
+| Threat | Description | Mitigation |
+|--------|--------------|-------------|
+| **Phishing** | Fake emails tricking users into revealing credentials | Awareness training, MFA |
+| **Ransomware** | Malicious encryption of files | Backups, patching, limited privileges |
+| **Insider Threats** | Misuse by employees | Role-based access, logging |
+| **Unpatched Systems** | Old software exploited | Automatic updates |
+| **Weak Passwords** | Easily guessed passwords | Password managers, MFA |
 
 ---
 
-## 🔗 Additional Resources
-
-- [CISA Small Business Cybersecurity Corner](https://www.cisa.gov/resources-tools/services/small-business-cybersecurity-corner) – U.S. government hub for SMBs
-- [NIST Cybersecurity Framework](https://www.nist.gov/cyberframework) – Official framework for managing cyber risk
-- [HaveIBeenPwned](https://haveibeenpwned.com/) – Check if your emails have been breached
-- [1Password](https://1password.com/) / [Bitwarden](https://bitwarden.com/) – Trusted password managers
-- [Cloudflare DNS](https://1.1.1.1/) – Privacy-focused DNS for safer browsing
-- [Google Workspace Security Guide](https://support.google.com/a/answer/7587183?hl=en) – For orgs using Google Workspace
+## 3. Response Planning
+When incidents occur, every second counts.  
+- Follow the **Incident Response Template** provided in `IncidentResponseTemplates.md`.  
+- Document incidents and lessons learned.  
+- Review and update controls quarterly.
 
 ---
 
-## 🛠️ How to Customize This Playbook for Your Business
+## 4. Ongoing Maintenance
 
-This playbook provides a general foundation, but you should customize it based on your industry, tools, and threat model. Here are suggestions:
-
-| Industry | What to Add |
-|----------|-------------|
-| **Healthcare** | HIPAA compliance requirements, medical device security, secure patient portals |
-| **Retail** | POS (point of sale) system hardening, card payment compliance (PCI-DSS) |
-| **Nonprofits** | Secure donor databases, volunteer device policy, low-cost/free security tools |
-| **Remote Teams** | VPN requirements, secure cloud file storage, endpoint protection on home devices |
-| **Education** | Device control for students/staff, web filtering, Google Workspace for Education security settings |
-
-🎯 *Use the checklist and templates as a base, and add steps specific to your environment.*
-
-## 🖼️ Security Layers Diagram
-
-Below is a simplified security model for small businesses:
-
-       +-----------------------------+
-       |     Staff Security Training |
-       +-----------------------------+
-                    ▲
-                    |
-       +-----------------------------+
-       | Multi-Factor Authentication |
-       +-----------------------------+
-                    ▲
-                    |
-       +-----------------------------+
-       | Strong Password Management  |
-       +-----------------------------+
-                    ▲
-                    |
-       +-----------------------------+
-       |     Device Antivirus/EDR    |
-       +-----------------------------+
-                    ▲
-                    |
-       +-----------------------------+
-       |    Secured Router/Firewall  |
-       +-----------------------------+
-                    ▲
-                    |
-       +-----------------------------+
-       |    Internet / Cloud Apps    |
-       +-----------------------------+
-
-
-✅ **Pro Tip:** Put a blank line above and below the diagram so it displays cleanly.
+| Task | Frequency | Responsible |
+|------|------------|-------------|
+| Review user access | Monthly | IT/Admin |
+| Check Windows updates | Weekly | Admin |
+| Verify backups | Daily | IT/Owner |
+| Review failed logins | Weekly | IT/Admin |
+| Conduct training | Quarterly | HR/Admin |
 
 ---
 
-### 📍 Step 3: Save Changes
-
-- Scroll to the bottom of the page
-- Add a commit message like `Add security layers diagram`
-- Click the green **“Commit changes”** button
+## 5. Automation Option
+Run `SecurityHealthCheck.ps1` weekly to automatically generate a security status report, covering:
+- Patch status  
+- Inactive accounts  
+- Failed login attempts  
+- Backup verification  
 
 ---
 
-✅ Done! You now have a basic **visual model** inside your playbook that works great in Markdown and looks clean in GitHub.
-
-Let me know if you'd like to:
-- Add a visual image version later (PNG or SVG)
-- Move this diagram into its own `.md` file (optional)
-- Generate a matching diagram image once you're logged in
-
-Ready to help with next steps!
-
-
+**Author:** CIS Capstone Student  
+**Created with AI assistance (ChatGPT) and manual validation.**
