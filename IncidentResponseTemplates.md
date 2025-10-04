@@ -1,4 +1,4 @@
-# 🚨 Incident Response Templates
+#  Incident Response Templates
 
 ## Template 1: Phishing Email Reported
 
