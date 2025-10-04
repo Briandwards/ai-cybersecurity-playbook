@@ -1,4 +1,4 @@
-# 🛡️ Small Business Cybersecurity Playbook
+#  Small Business Cybersecurity Playbook
 
 ## Overview
 This playbook provides a simple, step-by-step cybersecurity framework tailored for small businesses and nonprofits. It’s designed to be clear, actionable, and affordable — no dedicated IT team required.
