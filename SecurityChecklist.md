@@ -1,39 +1,24 @@
-# 📋 Cybersecurity Checklist for Small Businesses
+# ✅ Small Business Security Checklist
 
-Use this checklist to evaluate and improve your current cybersecurity posture.
+Use this checklist monthly to track your cybersecurity posture.
 
----
-
-## 🧠 Basic Awareness
-- [ ] Train staff on phishing and social engineering
-- [ ] Post a cybersecurity awareness poster in office
-- [ ] Assign a security point of contact
-
----
-
-## 🔐 Access Control
-- [ ] All accounts use strong, unique passwords
-- [ ] MFA enabled on all business apps
-- [ ] Admin privileges limited to essential users
-
----
-
-## 💾 Data Protection
-- [ ] Daily cloud backups scheduled
-- [ ] Backups tested monthly
-- [ ] Sensitive files encrypted at rest
+| Category | Task | Status (✔/❌) |
+|-----------|------|---------------|
+| **Access Control** | All users have least-privilege access |  |
+|  | Local admin accounts reviewed monthly |  |
+| **Passwords** | MFA enabled for all accounts |  |
+|  | Password length ≥ 12 characters |  |
+| **Patching** | Windows & software auto-updates enabled |  |
+|  | Last update less than 30 days old |  |
+| **Backups** | Automatic daily backups enabled |  |
+|  | Backups tested successfully |  |
+| **Network Security** | Firewall enabled and configured |  |
+|  | Wi-Fi secured with WPA3 and strong password |  |
+| **Monitoring** | Logs reviewed weekly |  |
+|  | SecurityHealthCheck.ps1 run weekly |  |
+| **Training** | Employees completed phishing training |  |
+|  | Incident response plan reviewed quarterly |  |
 
 ---
 
-## 🌐 Network and Devices
-- [ ] Firewall enabled and configured
-- [ ] Antivirus software installed and up to date
-- [ ] Remote access restricted and logged
-
----
-
-## 📈 Ongoing Maintenance
-- [ ] Security policy reviewed quarterly
-- [ ] Software and systems updated weekly
-- [ ] Simulated phishing test conducted bi-annually
-
+**Tip:** Store completed checklists securely for audit evidence.
