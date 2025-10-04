@@ -1,17 +1,13 @@
 <#
 .SYNOPSIS
-    Security Health Check Script for Small Businesses
+    Security Health Check Script
 .DESCRIPTION
-    This script performs a quick Windows security health check:
-    - Checks Windows Update status
-    - Confirms firewall status on all profiles
-    - Lists local administrator accounts
-    - Verifies antivirus status
-    - Exports results to a report file
-.NOTES
-    Author: CIS Capstone Student
-    Created with AI assistance (ChatGPT) and manual validation
-    Version: 1.0
+    Performs Windows security audit:
+    - Checks updates
+    - Firewall status
+    - Local admin accounts
+    - Antivirus status
+    - Generates a report
 #>
 
 Write-Host "===== Running Security Health Check =====" -ForegroundColor Cyan
@@ -24,76 +20,38 @@ if (-not (Test-Path $OutputPath)) {
 
 $ReportFile = Join-Path $OutputPath "SecurityHealthReport_$(Get-Date -Format 'yyyyMMdd_HHmmss').txt"
 
-# Start report
+# Report header
 "Security Health Check Report - $(Get-Date)" | Out-File $ReportFile
 "==========================================" | Out-File $ReportFile -Append
 
-# ------------------------------
-# 1️⃣  WINDOWS UPDATE STATUS
-# ------------------------------
-Write-Host "`nChecking Windows Update status..." -ForegroundColor Yellow
-"--- Windows Update Status ---" | Out-File $ReportFile -Append
-
+# 1️⃣ Windows Update
+Write-Host "Checking Windows Update..." -ForegroundColor Yellow
+"--- Windows Update ---" | Out-File $ReportFile -Append
 Try {
-    $Updates = Get-WindowsUpdateLog -ErrorAction SilentlyContinue
-    (Get-HotFix | Sort-Object -Property InstalledOn -Descending | Select-Object -First 5) |
-        Format-Table -AutoSize | Out-String | Out-File $ReportFile -Append
-    "Windows Update: OK (Recent patches listed above)" | Out-File $ReportFile -Append
-} Catch {
-    "Unable to retrieve update log. Ensure you have permission." | Out-File $ReportFile -Append
-}
+    Get-HotFix | Sort InstalledOn -Descending | Select-Object -First 5 | Format-Table -AutoSize | Out-String | Out-File $ReportFile -Append
+} Catch { "Could not retrieve updates." | Out-File $ReportFile -Append }
 
-# ------------------------------
-# 2️⃣  FIREWALL STATUS
-# ------------------------------
-Write-Host "Checking Windows Firewall..." -ForegroundColor Yellow
+# 2️⃣ Firewall Status
+Write-Host "Checking Firewall..." -ForegroundColor Yellow
 "--- Firewall Status ---" | Out-File $ReportFile -Append
-
 Try {
-    $FirewallProfiles = Get-NetFirewallProfile
-    foreach ($profile in $FirewallProfiles) {
-        "Profile: $($profile.Name) | Enabled: $($profile.Enabled)" | Out-File $ReportFile -Append
-    }
-} Catch {
-    "Firewall check failed." | Out-File $ReportFile -Append
-}
+    Get-NetFirewallProfile | ForEach-Object { "Profile: $($_.Name) | Enabled: $($_.Enabled)" | Out-File $ReportFile -Append }
+} Catch { "Firewall check failed." | Out-File $ReportFile -Append }
 
-# ------------------------------
-# 3️⃣  LOCAL ADMIN ACCOUNTS
-# ------------------------------
-Write-Host "Listing local administrator accounts..." -ForegroundColor Yellow
-"--- Local Administrator Accounts ---" | Out-File $ReportFile -Append
-
+# 3️⃣ Local Admin Accounts
+Write-Host "Listing local admin accounts..." -ForegroundColor Yellow
+"--- Local Admin Accounts ---" | Out-File $ReportFile -Append
 Try {
-    $Admins = Get-LocalGroupMember -Group "Administrators"
-    foreach ($admin in $Admins) {
-        "Account: $($admin.Name) | ObjectClass: $($admin.ObjectClass)" | Out-File $ReportFile -Append
-    }
-} Catch {
-    "Unable to retrieve local admin accounts. Try running PowerShell as Administrator." | Out-File $ReportFile -Append
-}
+    Get-LocalGroupMember -Group "Administrators" | ForEach-Object { "Account: $($_.Name)" | Out-File $ReportFile -Append }
+} Catch { "Cannot retrieve local admins. Run as Administrator." | Out-File $ReportFile -Append }
 
-# ------------------------------
-# 4️⃣  ANTIVIRUS STATUS
-# ------------------------------
-Write-Host "Checking antivirus status..." -ForegroundColor Yellow
+# 4️⃣ Antivirus Status
+Write-Host "Checking Antivirus..." -ForegroundColor Yellow
 "--- Antivirus Status ---" | Out-File $ReportFile -Append
-
 Try {
-    $AV = Get-CimInstance -Namespace root/SecurityCenter2 -ClassName AntivirusProduct
-    foreach ($item in $AV) {
-        "Name: $($item.displayName) | Status: $($item.productState)" | Out-File $ReportFile -Append
-    }
-} Catch {
-    "Unable to retrieve antivirus information." | Out-File $ReportFile -Append
-}
+    Get-CimInstance -Namespace root/SecurityCenter2 -ClassName AntivirusProduct | ForEach-Object { "Name: $($_.displayName) | State: $($_.productState)" | Out-File $ReportFile -Append }
+} Catch { "Cannot retrieve antivirus info." | Out-File $ReportFile -Append }
 
-# ------------------------------
-# 5️⃣  FINAL SUMMARY
-# ------------------------------
-Write-Host "`nFinalizing report..." -ForegroundColor Yellow
-"--- Summary ---" | Out-File $ReportFile -Append
-"Report generated: $ReportFile" | Out-File $ReportFile -Append
-
-Write-Host "`nSecurity Health Check complete!" -ForegroundColor Green
-Write-Host "Report saved to: $ReportFile" -ForegroundColor Cyan
+# Summary
+"--- End of Report ---" | Out-File $ReportFile -Append
+Write-Host "Report saved to: $ReportFile" -ForegroundColor Green
