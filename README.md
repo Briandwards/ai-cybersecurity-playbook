@@ -1,42 +1,40 @@
-# 🧠 AI-Assisted Cybersecurity Playbook for Small Businesses
+#  AI-Assisted Cybersecurity Playbook for Small Businesses
 
 ## Overview
-A practical, AI-enhanced cybersecurity toolkit designed for small organizations. It includes:
-- A complete security playbook
-- Incident response templates
-- A security checklist
-- An automation script (`SecurityHealthCheck.ps1`) for weekly reporting
+Practical cybersecurity toolkit including:
+- Security Playbook
+- Incident Response Templates
+- Security Checklist
+- Automation Script (`SecurityHealthCheck.ps1`)
 
-This project was created using AI (ChatGPT) and refined manually for clarity, accuracy, and professional presentation.
+Designed for small organizations to **implement, monitor, and improve security**.
 
 ---
 
 ## Business Value
-Small organizations often lack cybersecurity expertise.  
-This project provides **ready-to-use, actionable protection** that:
-- Improves operational security  
-- Reduces risk of data loss and ransomware  
-- Helps meet compliance and insurance requirements  
-- Demonstrates cybersecurity competence for job portfolios
+- Actionable guidance for non-technical users
+- Automated audit of Windows environment
+- Reduces risk of breaches, ransomware, and misconfigurations
+- Portfolio-ready demonstration of cybersecurity skills
 
 ---
 
 ## File Summary
 
 | File | Description |
-|------|-------------|
-| `SecurityPlaybook.md` | Core guide with security principles |
-| `IncidentResponseTemplates.md` | Step-by-step incident procedures |
-| `SecurityChecklist.md` | Self-assessment checklist |
-| `AutomationScripts/SecurityHealthCheck.ps1` | PowerShell security audit script |
-| `Reflection.md` | Notes on AI brainstorming and learning |
+|------|------------|
+| SecurityPlaybook.md | Core guide and best practices |
+| IncidentResponseTemplates.md | Step-by-step incident handling |
+| SecurityChecklist.md | Self-assessment checklist |
+| AutomationScripts/SecurityHealthCheck.ps1 | Automated Windows audit script |
+| Reflection.md | AI brainstorming and learning reflection |
 
 ---
 
-## How to Use
-1. Review `SecurityPlaybook.md` to learn the fundamentals.  
-2. Follow `SecurityChecklist.md` monthly.  
-3. In case of an incident, use `IncidentResponseTemplates.md`.  
-4. Automate health checks with PowerShell script:
-   ```powershell
-   .\SecurityHealthCheck.ps1
+## Usage
+
+### Run Automation Script
+```powershell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+cd .\AutomationScripts\
+.\SecurityHealthCheck.ps1
