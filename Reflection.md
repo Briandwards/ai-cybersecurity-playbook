@@ -1,10 +1,10 @@
 
 ---
 
-## 📁 File 5 — `Reflection.md`
+##  File 5 — `Reflection.md`
 
 ```markdown
-# 🤖 Reflection on AI-Enhanced Cybersecurity Project
+#  Reflection on AI-Enhanced Cybersecurity Project
 
 ## Brainstorming Process
 Initial AI brainstorming focused on ideas that:
