@@ -1,42 +1,55 @@
-# 🚨 Incident Response Templates for Small Businesses
+# 🚨 Incident Response Templates
 
-These templates provide step-by-step response plans for common cybersecurity incidents. Each one is written for non-technical users and can be adapted to your specific needs.
+## Template 1: Phishing Email Reported
 
----
+**Goal:** Contain and analyze a suspected phishing attempt.
 
-## 🧪 Phishing Email Reported
-
-**Step 1:** Ask the employee not to click any links or reply.  
-**Step 2:** Forward the email to your IT/security team.  
-**Step 3:** Block the sender in your email platform.  
-**Step 4:** Run antivirus on affected machine.  
-**Step 5:** Remind employees how to identify phishing attempts.
-
----
-
-## 🛑 Ransomware Detected on a Device
-
-**Step 1:** Disconnect the device from the network (Wi-Fi or Ethernet).  
-**Step 2:** Do NOT restart the device.  
-**Step 3:** Contact your IT or security provider immediately.  
-**Step 4:** Restore clean backup if possible.  
-**Step 5:** Report the incident and evaluate other devices for compromise.
+1. Instruct the employee *not* to click or reply.
+2. Forward the email as an attachment to IT or security contact.
+3. Verify sender domain and header information.
+4. Block sender in email system.
+5. If credentials were entered, reset passwords immediately.
+6. Document incident in log file or ticket.
+7. Conduct awareness follow-up.
 
 ---
 
-## 🧳 Lost or Stolen Laptop
+## Template 2: Ransomware Detected
 
-**Step 1:** Report the loss to your supervisor or manager.  
-**Step 2:** Remotely wipe the device (if configured).  
-**Step 3:** Change passwords for any accounts accessed from the device.  
-**Step 4:** File a police report if necessary.
+**Goal:** Contain and recover while preserving evidence.
+
+1. Immediately disconnect the affected machine from the network.  
+2. Notify management and IT team.  
+3. Preserve system logs and note file names of encrypted data.  
+4. Identify backup status — restore from the most recent clean version.  
+5. Report to law enforcement if needed.  
+6. Conduct post-incident analysis and update backups.
 
 ---
 
-## 🔐 Suspicious Login Detected
+## Template 3: Unauthorized Login Attempts
 
-**Step 1:** Review login logs in Google Workspace, Microsoft 365, or your app.  
-**Step 2:** Change passwords immediately.  
-**Step 3:** Enable or verify MFA is enabled.  
-**Step 4:** Monitor for additional unusual activity.
+**Goal:** Detect brute-force or compromised account activity.
 
+1. Review `SecurityHealthCheck.ps1` or Windows Event Viewer for failed logins.  
+2. Lock the affected account if unusual activity is confirmed.  
+3. Force a password reset and enable MFA.  
+4. Check for lateral movement in network logs.  
+5. Document all actions taken.
+
+---
+
+## Template 4: Data Breach
+
+**Goal:** Comply with regulations and notify impacted parties.
+
+1. Contain the breach (disable access, isolate systems).  
+2. Identify the affected data and systems.  
+3. Notify leadership and legal counsel.  
+4. Contact regulatory bodies if personal data involved.  
+5. Inform impacted users/customers if applicable.  
+6. Conduct post-incident review and patch vulnerabilities.
+
+---
+
+**Use these templates as living documents** — customize to your organization’s contacts, tools, and communication channels.
